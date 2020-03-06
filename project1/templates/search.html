@@ -1,0 +1,32 @@
+{%extends "layout.html"%}
+{%block title%}Book search{%endblock title%}
+{%block main%}
+    {%if isbn%}
+        <br><br><br><br><br>
+        <table class="table table-dark">
+            <thead>
+            <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+            </tr>
+            </thead>
+            <tbody>
+              {%for a,b,c,d in isbn%}
+              <tr>
+                <th scope="row"><a href="books/book_detail/{{a}}" style="color:white;">{{a}}</a></th>
+                <td><a href="books/book_detail/{{a}}" style="">{{b}}</a></td>
+                <td><a href="books/book_detail/{{a}}" style="color:lightgreen;">{{c}}</a></td>
+                <td><a href="#" style="color:brown;">{{d}}</a></td>
+
+              </tr>
+
+              {%endfor%}
+          </tbody>
+        </table>
+    {%else%}
+      <h1 style="font-size:50px; text-align:center; margin-top:10%;">sorry but it seems we don't have that book, you can look for others similar if you're interested. <a href="/">Books</a></h1>
+    {%endif%}
+
+{%endblock%}

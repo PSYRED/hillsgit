@@ -1,0 +1,102 @@
+{%extends "layout.html"%}
+{%block title%}Book review| {{title}}{%endblock title%}
+{%block main%}
+<div class="card" style="float:left; text-align:center; margin-top:7%; margin-left:3%; width:48rem;">
+  <div class="card-title">
+    <h1>Title: {{title}}</h1>
+  </div>
+  <div class="card-body">
+    <h2 class="class-title">Author: {{author}}</h2>
+    <h2 class="class-title">Isbn:{{isbn}}</h2>
+    <h2 class="class-title">Publication year: {{year}}</h2>
+  </div>
+
+</div>
+
+<div class="Card" style="float:right; text-align:center; margin-top:7%; width:48rem; margin-right:10%;">
+
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star checked"></span>
+  <span class="fa fa-star"></span>
+  <span class="fa fa-star"></span>
+  <form class="" action="" method="post">
+    <p style="color:teal;">please add a rating.</p>
+    <label for="5">5</label>
+    <input type="radio" id= "5" name="stars" value="5">
+    <label for="4">4</label>
+    <input type="radio" id= "4" name="stars" value="4">
+    <label for="3">3</label>
+    <input type="radio" id= "3" name="stars" value="3">
+    <label for="2">2</label>
+    <input type="radio" id= "2" name="stars" value="2">
+    <label for="1">1</label>
+    <input type="radio" id= "1" name="stars" value="1">
+  </form>
+  <form class="" action="" method="post">
+    <div class="card-body">
+      <h5 style="color:red;">{{ans}}.</h5>
+      <textarea name="rev" rows="8" cols="80" placeholder="Leave a review for the book"></textarea><br>
+      <button type="submit" class="btn btn-primary" name="button">submit</button><br>
+      <p style="color:teal">Thank you for your review.</p>
+
+    </div>
+  </form>
+
+  <div class="card-title">
+    <h1>Ratings</h1>
+  </div>
+  <div class="card-body">
+    <h2 class="class-title">Goodreads Average rating: <span style="color:teal;">{{goodreads}}</span></h2>
+    <h2 class="class-title">Number of ratings:  <span style="color:teal;">{{rating}}</span></h2>
+    <h2 class="class-title">Ratings from :  <span style="color:teal;">goodreads</span></h2>
+  </div>
+</div><br>
+<div class="reviews" style="text-align:center; margin-left:5%; margin-top:24%; width:38rem;">
+  <div class="card-header">
+    <h1 style="color:teal;">Reviews</h1>
+  </div>
+    {%for i,j,k,l in reviews%}
+      <div class="card" style="margin-top:2%;">
+       <div class="card-body">
+         <h5 class="card-title">{{i}}</h5>
+         <p class="card-text text-muted">{{k}}</p>
+         {%if j==5 %}
+           rated <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+         {%elif  j ==4 %}
+           rated <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star "></span>
+         {%elif  j ==3 %}
+           rated <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star"></span>
+           <span class="fa fa-star"></span>
+         {%elif  j ==2 %}
+           rated <span class="fa fa-star checked"></span>
+           <span class="fa fa-star checked"></span>
+           <span class="fa fa-star"></span>
+           <span class="fa fa-star"></span>
+           <span class="fa fa-star"></span>
+         {%elif  j ==1 %}
+           rated <span class="fa fa-star checked"></span>
+           <span class="fa fa-star"></span>
+           <span class="fa fa-star "></span>
+           <span class="fa fa-star"></span>
+           <span class="fa fa-star"></span>
+         {%endif%}
+         <p class="card-text"><small class="text-muted">added review: 3 months ago</small></p>
+       </div>
+     </div>
+    {%endfor%}
+
+
+
+{%endblock%}
