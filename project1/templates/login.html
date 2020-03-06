@@ -5,34 +5,32 @@
     <title>Jm50 | Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+
     <style>
       .card{
-        margin-left:490px;
-        margin-top:150px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        margin-top:15%;
+        margin-left: 40%
+
       }
       #body{
-        background-image: linear-gradient(to right,rgb(0, 105, 217),#933c7f);
+        background-image: url("./static/books-1245690_1920.jpg")
       }
-      .jm{
-        font-weight: 400;
-        font-size: 50px;
-        color: blue;
-        font-stretch:extra-expanded;
+      .form-group{
+        padding-bottom: 15%;
       }
     </style>
 
   </head>
   <body id="body">
 
-    <div class="card" style="width:20rem;">
+    <div class="card" style="width:20rem; height:35rem;">
       <div class="card-body">
         <div class="card-title">
 
         </div>
         <form class="" action="{{url_for('login')}}" method="post">
-          <div class="form-group">
+          <div class="form-group" >
             <p style="color:red;">{{m}}</p> <br>
             <label for="username">Username</label>
             <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="username" required>
@@ -41,13 +39,14 @@
             <label for="password">Password</label>
             <input type="password" class= "form-control" name="password" id="password" placeholder="Enter your password" required>
           </div>
-          <a href="#"><p class="card-text" style="color:blue; padding-bottom:10px;">forgot password.</p></a>
-          <button type="submit" class="btn btn-primary" style="margin-right:75px;">Login</button>
+          <a href="#"><p class="card-text" style="color:blue; padding-bottom:10px; padding-top:5%;">forgot password.</p></a>
+          <button type="submit" class="btn btn-primary" style="margin-right:35px;">Login</button>
           <a href="./signup"><button class="btn btn-primary" type="button" name="Create account">Create Account</button></a>
         </form>
 
       </div>
     </div>
+    <h2 style="color:brown;font-family:Roboto">Created by:Bruks</h2>
 
   </body>
 </html>

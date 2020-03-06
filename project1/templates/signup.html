@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="./o.css">
     <style>
       .card-deck{
-        margin-left:390px;
-        margin-top:100px;
+        margin:12%;
+        margin-left: 25%;
       }
       .card{
         margin-left:30px;
       }
       #body{
-        background-image: linear-gradient(to right,rgb(0, 105, 217),#933c7f);
+        background-image: url("./static/narrative-794978_1920.jpg");
+
       }
       .jm{
         font-weight: 400;
@@ -26,7 +27,11 @@
     </style>
   </head>
   <body id="body">
-    <div class="card-deck"  style="width: 40rem;">
+    <div class="books">
+      <h1 style="font-size:30px;">signup and enjoy our collection of more than 5000 books</h1>
+      <h5 style="float: right; margin-right:3%">Already have an account? <a href="{{url_for('welcome')}}">Log in</a></h5>
+    </div>
+    <div class="card-deck" style="width:60rem; height:35rem;">
       <div class="card" align="center">
         <div class="card-body">
           <form action="{{url_for('new')}}" method="post">
@@ -44,6 +49,7 @@
                 <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last name" required>
               </div>
               <div class="form-group">
+                <p style="color:teal;">{{r}}</p>
                 <label for="email">Email</label>
                 <input type="email" class="form-control" name="email" id="email" placeholder="Email or phone number" required>
               </div>
@@ -65,6 +71,7 @@
 
             </div>
               <div class="form-group">
+                <h5 style="color:teal;">{{t}}</h5>
                 <label for="username">Username</label>
                 <input type="text" class="form-control" name="username" id="username" placeholder="What do you want us to call you" required>
               </div>
@@ -77,13 +84,12 @@
                 <input type="password" class= "form-control" name="confpassword" id="confpassword" required>
               </div>
               <button type="submit" class="btn btn-primary">Create Account</button>
+
             </form>
 
           </div>
         </div>
     </div>
-
-
-
+    <h6 style="color:blue;">Created by bruks</h6>
   </body>
 </html>
